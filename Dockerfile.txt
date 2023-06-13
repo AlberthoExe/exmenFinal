@@ -1,0 +1,18 @@
+#selecciona
+FROM alpine:latest
+
+#define
+LABEL maintainer="alberto <albertocon29@gmail.com>"
+
+#ejecutar
+RUN apk update && apk upgrape && apk add --no-cache nginx
+
+#copia 
+COPY index.html /home/cadbane/Escritorio/Universidad/
+
+#expone
+
+EXPOSE 80
+
+#define
+CMD ["nginx", "-g", "daemon off;"]
